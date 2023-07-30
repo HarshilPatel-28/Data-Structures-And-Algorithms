@@ -1,0 +1,8 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        //in any case middle element of sorted array is always greater than n/2 in this case
+        sort(nums.begin(),nums.end());
+        return nums[(int)nums.size()/2];
+    }
+};
