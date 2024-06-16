@@ -1,0 +1,29 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+         stringstream ss(s);
+        string word;
+        vector<string> words;
+
+        // Split the input string by whitespace
+        while (ss >> word) {
+            words.push_back(word);
+        }
+
+        // Initialize the output string
+        string out;
+
+        // Iterate through the words in reverse order
+        for (int i = words.size() - 1; i >= 0; i--) {
+            // Append the current word and a space to the output
+            out += words[i] + " ";
+        }
+
+        // Remove the trailing space if the output string is not empty
+        if (!out.empty()) {
+            out.pop_back(); // Remove the last space
+        }
+
+        return out;
+    }
+};
